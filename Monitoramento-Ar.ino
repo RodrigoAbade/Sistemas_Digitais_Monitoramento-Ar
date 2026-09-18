@@ -1,3 +1,4 @@
+#include "secrets.h"  // Copie secrets.example.h e preencha localmente.
   #include <Wire.h>              
   #include <Adafruit_GFX.h>       
   #include <Adafruit_SSD1306.h>   
@@ -13,14 +14,7 @@
   #define MQ135_PIN A0          
   #define MQ7_PIN D0           
   #define LED_PIN D4              
-  
-  const char* SSID = "TTFIBRA-ABADE";
-  const char* PASSWORD = "abade2605";
 
-  const char* SUPABASE_URL = "https://krccnsbfofpowxdzspwc.supabase.co";
-  const char* SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyY2Nuc2Jmb2Zwb3d4ZHpzcHdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQwMjQyNjksImV4cCI6MjA0OTYwMDI2OX0.5r-KaYdn6UEdaVnQOaN3nDp4SCIs6WH6DUecnzhRXko";
-
-  const char* THINGSPEAK_API_KEY = "YIEBLY8CUWNS85AF";
   const char* THINGSPEAK_SERVER = "http://api.thingspeak.com/update";
 
   int readings[128];
@@ -79,8 +73,6 @@
       String authHeader = "Bearer " + String(SUPABASE_API_KEY);
       String apiKeyHeader = String(SUPABASE_API_KEY);  
 
-      Serial.println("Authorization Header: " + authHeader); 
-      Serial.println("API Key Header: " + apiKeyHeader); 
 
       http.addHeader("Authorization", authHeader);  
       http.addHeader("apikey", apiKeyHeader);  
