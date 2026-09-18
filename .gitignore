@@ -1,0 +1,5 @@
+# Credenciais locais
+secrets.h
+.env
+.env.*
+!.env.example
